@@ -1,0 +1,355 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="UTF-8"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><link rel="apple-touch-icon" sizes="180x180" href="..\ydoc\images\apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="..\ydoc\images\favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="..\ydoc\images\favicon-16x16.png"/><link rel="manifest" href="..\ydoc\images\manifest.json"/><link rel="mask-icon" href="..\ydoc\images\safari-pinned-tab.svg" color="#5bbad5"/><meta name="theme-color" content="#ffffff"/><meta http-equiv="Cache-Control" content="no-transform"/><meta http-equiv="Cache-Control" content="no-siteapp"/><title>新拟态 UI-效果</title><link rel="stylesheet" href="..\ydoc\styles\style.css"/><meta name="author" content="Mondo"/><meta name="keywords"/><meta name="description" content="css �ɼ���"/><meta id="releativePath" content=".."/><link rel="stylesheet" href="..\ydoc\ydoc-plugin-search\search.css"/></head><body><div class="g-doc"><div class="m-aside"><div class="m-summary" id="js-menu"><div class="m-summary-content" id="js-menu-content"><div class="m-summary-block"><ul class="m-summary-list"><li class="item"><a href="triangle.html" class="href">三角形</a></li><li class="item"><a href="onepx.html" class="href">移动端 1px</a></li><li class="item"><a href="" class="href">新拟态 UI</a></li></ul></div></div></div><div class="m-summary-switch" id="js-summary-switch"><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="bottom"><g transform="translate(904.92214,-879.1482)"><path d="m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,-55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,-174.6858 c 96.079,-96.07721 175.253196,-174.68583 175.942696,-174.68583 0.6895,0 26.281,25.03215 56.8701,55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864-231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,-104.0616 -231.873,-231.248 z" fill="#fff"></path></g></svg><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="top"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="aaa" fill="#fff" fill-rule="nonzero"><path d="M231.2455,342.502 L0,111.25397 L55.6165,55.62697 C86.2056,25.03212 111.7971,-2.99999998e-05 112.4866,-2.99999998e-05 C113.176,-2.99999998e-05 192.3503,78.60859 288.4293,174.6858 L463.1185,349.3716 L637.8077,174.6858 C733.8867,78.60859 813.060896,-2.99999997e-05 813.750396,-2.99999997e-05 C814.439896,-2.99999997e-05 840.031396,25.03212 870.620496,55.62697 L926.236996,111.25397 L694.9915,342.502 C567.8065,469.6884 463.4636,573.75 463.1185,573.75 C462.7734,573.75 358.4305,469.6884 231.2455,342.502 Z" id="Shape" transform="translate(463.118498, 286.874985) scale(1, -1) translate(-463.118498, -286.874985) "></path></g></g></svg></div></div><div class="m-main" id="js-panel"><header class="m-header" id="js-header"><div class="m-header-title js-logo"><a href="..\index.html" target="_self"><img class="logo" width="36" src="..\ydoc\images\dog@1x.png"/><h6 class="name">CSS Libs</h6></a></div><div><div class="m-search">
+      <div class="icon">&#xf0fd;</div>
+      <input type="text" class="input js-input" placeholder="搜索" />
+      <div class="m-search-result js-search-result"></div>
+    </div></div><nav class="m-header-nav js-nav"><ul class="m-header-items"><li class="item active"><a class="href" href="triangle.html">效果</a></li><li class="item "><a class="href" href="https://flatuicolors.com/palette/defo">颜色</a></li><li class="item "><a class="href" href="https://uigradients.com/#Sel">渐变色</a></li></ul></nav><div id="js-nav-btn" class="m-header-btn ui-font-ydoc"></div></header><div class="m-content" id="js-content"><div id="markdown-body" class="m-content-container markdown-body"><h1>新拟态 UI</h1>
+<p>英文名 Neumorphism，简称 “Soft UI”。是一种图形样式，通过 css 来模拟真实的物体</p>
+<h2 id="基本实现">基本实现</h2>
+<style>
+  html {
+  /* 定义变量 */
+  --bgColor: #ff5353;
+
+  /* rgba的四个值分别为：红(R)、绿(G)、蓝(B)、透明度(A) */
+  --whiteShadow: -15px -15px 25px rgba(255, 117, 117, .5);
+  --blackShadow: 15px 15px 25px rgba(110, 40, 40, .2);
+}
+
+/* 设置一些页面的布局样式 */
+.container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 40vw;
+  height: 40vh;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bgColor);
+}
+
+.card {
+  width: 30vh;
+  height: 30vh;
+  margin: 45px;
+  background-color: var(--bgColor);
+  border-radius: 30px;
+}
+
+/* 主要部分 */
+.left {
+    /* 设置外阴影 */
+  box-shadow: var(--blackShadow),
+              var(--whiteShadow);
+}
+
+.right {
+    /* 设置内阴影 */
+  box-shadow: inset var(--blackShadow),
+              inset var(--whiteShadow);
+}
+</style>
+<div class="container">
+  <div class="card left"></div>
+  <div class="card right"></div>
+</div>
+<pre><code class="language-html">  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card right<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+</code></pre>
+<pre><code class="language-css"><span class="token selector">html</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* 定义变量 */</span>
+    <span class="token property">--bgColor</span><span class="token punctuation">:</span> #ff5353<span class="token punctuation">;</span>
+
+    <span class="token comment">/* rgba的四个值分别为：红(R)、绿(G)、蓝(B)、透明度(A) */</span>
+    <span class="token property">--whiteShadow</span><span class="token punctuation">:</span> -15px -15px 25px <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 117<span class="token punctuation">,</span> 117<span class="token punctuation">,</span> .5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">--blackShadow</span><span class="token punctuation">:</span> 15px 15px 25px <span class="token function">rgba</span><span class="token punctuation">(</span>110<span class="token punctuation">,</span> 40<span class="token punctuation">,</span> 40<span class="token punctuation">,</span> .2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* 设置一些页面的布局样式 */</span>
+<span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 40vw<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 40vh<span class="token punctuation">;</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--bgColor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.card</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 30vh<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 30vh<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 45px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--bgColor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* 主要部分 */</span>
+<span class="token selector">.left</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* 设置外阴影 */</span>
+    <span class="token property">box-shadow</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--blackShadow<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token function">var</span><span class="token punctuation">(</span>--whiteShadow<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.right</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* 设置内阴影 */</span>
+    <span class="token property">box-shadow</span><span class="token punctuation">:</span> inset <span class="token function">var</span><span class="token punctuation">(</span>--blackShadow<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                inset <span class="token function">var</span><span class="token punctuation">(</span>--whiteShadow<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="中级实现">中级实现</h2>
+<style>
+html {
+    /* 定义变量 */
+    --bgColor: #ff5353;
+
+    /* rgba的四个值分别为：红(R)、绿(G)、蓝(B)、透明度(A) */
+    --whiteShadow: -15px -15px 25px rgba(255, 117, 117, .5);
+    --blackShadow: 15px 15px 25px rgba(110, 40, 40, .2);
+
+    --whiteShadow2: 15px 15px 25px rgba(255, 117, 117, .5);
+    --blackShadow2: -15px -15px 25px rgba(110, 40, 40, .2);
+}
+
+/* 设置一些页面的布局样式 */
+.container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 40vw;
+    height: 40vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bgColor);
+}
+
+.card {
+  width: 30vh;
+  height: 30vh;
+  margin: 45px;
+  background-color: var(--bgColor);
+  border-radius: 30px;
+}
+
+/* 主要部分 */
+.left1 {
+  box-shadow: inset var(--blackShadow2),
+              inset var(--whiteShadow2);
+}
+
+.right1 {
+  box-shadow: var(--blackShadow2),
+              var(--whiteShadow2);
+}
+</style>
+<div class="container">
+  <div class="card left1"></div>
+  <div class="card right1"></div>
+</div>
+<pre><code class="language-html"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card left1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card right1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+</code></pre>
+<pre><code class="language-css"><span class="token selector">html</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* 定义变量 */</span>
+    <span class="token property">--bgColor</span><span class="token punctuation">:</span> #ff5353<span class="token punctuation">;</span>
+
+    <span class="token comment">/* rgba的四个值分别为：红(R)、绿(G)、蓝(B)、透明度(A) */</span>
+    <span class="token property">--whiteShadow</span><span class="token punctuation">:</span> -15px -15px 25px <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 117<span class="token punctuation">,</span> 117<span class="token punctuation">,</span> .5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">--blackShadow</span><span class="token punctuation">:</span> 15px 15px 25px <span class="token function">rgba</span><span class="token punctuation">(</span>110<span class="token punctuation">,</span> 40<span class="token punctuation">,</span> 40<span class="token punctuation">,</span> .2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token property">--whiteShadow2</span><span class="token punctuation">:</span> 15px 15px 25px <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 117<span class="token punctuation">,</span> 117<span class="token punctuation">,</span> .5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">--blackShadow2</span><span class="token punctuation">:</span> -15px -15px 25px <span class="token function">rgba</span><span class="token punctuation">(</span>110<span class="token punctuation">,</span> 40<span class="token punctuation">,</span> 40<span class="token punctuation">,</span> .2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* 设置一些页面的布局样式 */</span>
+<span class="token selector">.container</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 40vw<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 40vh<span class="token punctuation">;</span>
+    <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--bgColor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.card</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 30vh<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 30vh<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 45px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--bgColor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* 主要部分 */</span>
+<span class="token selector">.left</span> <span class="token punctuation">{</span>
+    <span class="token property">box-shadow</span><span class="token punctuation">:</span> inset <span class="token function">var</span><span class="token punctuation">(</span>--blackShadow2<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                inset <span class="token function">var</span><span class="token punctuation">(</span>--whiteShadow2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.right</span> <span class="token punctuation">{</span>
+    <span class="token property">box-shadow</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--blackShadow2<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token function">var</span><span class="token punctuation">(</span>--whiteShadow2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="高级实现">高级实现</h2>
+<style>
+html {
+  /* 定义变量 */
+  --bgColor: #ff5353;
+
+  /* rgba的四个值分别为：红(R)、绿(G)、蓝(B)、透明度(A) */
+  --whiteShadow: -15px -15px 25px rgba(255, 117, 117, .5);
+  --blackShadow: 15px 15px 25px rgba(110, 40, 40, .2);
+
+  --whiteShadow2: 15px 15px 25px rgba(255, 117, 117, .5);
+  --blackShadow2: -15px -15px 25px rgba(110, 40, 40, .2);
+}
+
+/* 设置一些页面的布局样式 */
+.container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 40vw;
+  height: 40vh;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bgColor);
+}
+
+.card1 {
+  width: 30vh;
+  height: 30vh;
+  background-color: var(--bgColor);
+  border-radius: 30px;
+}
+
+/* 主要部分 */
+.left3 {
+  box-shadow: inset var(--blackShadow),
+              inset var(--whiteShadow);
+}
+
+.right3 {
+  box-shadow: var(--blackShadow),
+              var(--whiteShadow);
+  padding: 5px;
+}
+
+.left4 {
+  box-shadow: inset var(--blackShadow2),
+              inset var(--whiteShadow2);
+}
+
+.right4 {
+  box-shadow: var(--blackShadow),
+              var(--whiteShadow);
+  padding: 5px;
+  margin: 50px;
+}  
+</style>
+<div class="container">
+  <div class="card1 right3">
+      <div class="card1 left3"></div>
+  </div>
+  <div class="card1 right4">
+      <div class="card1 left4"></div>
+  </div>
+</div>
+<pre><code class="language-html"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card right3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+      <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card left3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card right4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+      <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card left4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+</code></pre>
+<pre><code class="language-css"><span class="token selector">html</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* 定义变量 */</span>
+  <span class="token property">--bgColor</span><span class="token punctuation">:</span> #ff5353<span class="token punctuation">;</span>
+
+  <span class="token comment">/* rgba的四个值分别为：红(R)、绿(G)、蓝(B)、透明度(A) */</span>
+  <span class="token property">--whiteShadow</span><span class="token punctuation">:</span> -15px -15px 25px <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 117<span class="token punctuation">,</span> 117<span class="token punctuation">,</span> .5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--blackShadow</span><span class="token punctuation">:</span> 15px 15px 25px <span class="token function">rgba</span><span class="token punctuation">(</span>110<span class="token punctuation">,</span> 40<span class="token punctuation">,</span> 40<span class="token punctuation">,</span> .2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token property">--whiteShadow2</span><span class="token punctuation">:</span> 15px 15px 25px <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 117<span class="token punctuation">,</span> 117<span class="token punctuation">,</span> .5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--blackShadow2</span><span class="token punctuation">:</span> -15px -15px 25px <span class="token function">rgba</span><span class="token punctuation">(</span>110<span class="token punctuation">,</span> 40<span class="token punctuation">,</span> 40<span class="token punctuation">,</span> .2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* 设置一些页面的布局样式 */</span>
+<span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 40vw<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 40vh<span class="token punctuation">;</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--bgColor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.card</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 30vh<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 30vh<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--bgColor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* 主要部分 */</span>
+<span class="token selector">.left3</span> <span class="token punctuation">{</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> inset <span class="token function">var</span><span class="token punctuation">(</span>--blackShadow<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              inset <span class="token function">var</span><span class="token punctuation">(</span>--whiteShadow<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.right3</span> <span class="token punctuation">{</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--blackShadow<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token function">var</span><span class="token punctuation">(</span>--whiteShadow<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.left4</span> <span class="token punctuation">{</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> inset <span class="token function">var</span><span class="token punctuation">(</span>--blackShadow2<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              inset <span class="token function">var</span><span class="token punctuation">(</span>--whiteShadow2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.right4</span> <span class="token punctuation">{</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--blackShadow<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token function">var</span><span class="token punctuation">(</span>--whiteShadow<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div><div class="m-content-container m-paging"><div class="m-paging-prev m-paging-item"><a href="onepx.html" class="href"><span class="ui-font-ydoc"></span>移动端 1px</a></div></div></div></div></div><div></div><script>
+    var $content = document.getElementById('js-content');
+    var $summaryItems = Array.prototype.slice.call(document.querySelectorAll('#js-menu .href'));
+    var $menu = document.getElementById('js-menu');
+    if (sessionStorage.prevPathname) {
+      sessionStorage.setItem('prevPrevPathname', sessionStorage.prevPathname);
+      sessionStorage.setItem('prevPrevMenuScrollTop', sessionStorage.prevMenuScrollTop);
+      sessionStorage.setItem('prevPrevContentScrollTop', sessionStorage.prevContentScrollTop);
+    }
+    if (sessionStorage.locationPathname) {
+      sessionStorage.setItem('prevPathname', sessionStorage.locationPathname);
+      sessionStorage.setItem('prevMenuScrollTop', sessionStorage.menuScrollTop);
+      sessionStorage.setItem('prevContentScrollTop', sessionStorage.contentScrollTop);
+    }
+    if ($menu && sessionStorage.menuScrollTop) {
+		  $menu.scrollTop = sessionStorage.menuScrollTop;
+    }
+    // 刷新页面但不切换 pathname 的时候，内容区恢复到记忆的高度
+    if ($content && sessionStorage.contentScrollTop && window.location.pathname == sessionStorage.locationPathname) {
+      $content.scrollTop = sessionStorage.contentScrollTop;
+    } else if (sessionStorage.prevPrevPathname && sessionStorage.prevPrevPathname === window.location.pathname) {
+      if ($menu && sessionStorage.prevPrevMenuScrollTop) {
+        $menu.scrollTop = sessionStorage.prevPrevMenuScrollTop;
+      }
+      if ($content && sessionStorage.prevPrevContentScrollTop) {
+        $content.scrollTop = sessionStorage.prevPrevContentScrollTop;
+      }
+    }
+    sessionStorage.setItem('locationPathname', window.location.pathname);
+    </script><script src="..\ydoc\scripts\plugins\dollar.min.js"></script><script src="..\ydoc\scripts\plugins\responsive-nav.min.js"></script><script src="..\ydoc\scripts\plugins\slideout.min.js"></script><script src="..\ydoc\scripts\app.js"></script><script src="..\ydoc\ydoc-plugin-search\core.js"></script><script src="..\ydoc\ydoc-plugin-search\search.js"></script><script src="..\search_json.js"></script></body></html>
