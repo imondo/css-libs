@@ -21,6 +21,7 @@
   padding: 0;
   width: 40vw;
   height: 40vh;
+  min-width: 300px;
   justify-content: center;
   align-items: center;
   background-color: var(--bgColor);
@@ -29,7 +30,7 @@
 .card {
   width: 30vh;
   height: 30vh;
-  margin: 45px;
+  margin: 5vh;
   background-color: var(--bgColor);
   border-radius: 30px;
 }
@@ -82,7 +83,7 @@ html {
 .card {
     width: 30vh;
     height: 30vh;
-    margin: 45px;
+    margin: 5vh;
     background-color: var(--bgColor);
     border-radius: 30px;
 }
@@ -131,7 +132,7 @@ html {
 .card {
   width: 30vh;
   height: 30vh;
-  margin: 45px;
+  margin: 5vh;
   background-color: var(--bgColor);
   border-radius: 30px;
 }
@@ -187,7 +188,7 @@ html {
 .card {
     width: 30vh;
     height: 30vh;
-    margin: 45px;
+    margin: 5vh;
     background-color: var(--bgColor);
     border-radius: 30px;
 }
@@ -232,10 +233,11 @@ html {
 }
 
 .card1 {
-  width: 30vh;
-  height: 30vh;
+  width: 15vh;
+  height: 15vh;
   background-color: var(--bgColor);
-  border-radius: 30px;
+  border-radius: 10px;
+  box-sizing: content-box;
 }
 
 /* 主要部分 */
@@ -259,7 +261,7 @@ html {
   box-shadow: var(--blackShadow),
               var(--whiteShadow);
   padding: 5px;
-  margin: 50px;
+  margin: 5vh;
 }  
 </style>
 
@@ -307,11 +309,12 @@ html {
   background-color: var(--bgColor);
 }
 
-.card {
-  width: 30vh;
-  height: 30vh;
+.card1 {
+  width: 15vh;
+  height: 15vh;
   background-color: var(--bgColor);
-  border-radius: 30px;
+  border-radius: 10px;
+  box-sizing: content-box;
 }
 
 /* 主要部分 */
@@ -335,6 +338,6 @@ html {
   box-shadow: var(--blackShadow),
               var(--whiteShadow);
   padding: 5px;
-  margin: 50px;
+  margin: 5vh;
 }
 ```
