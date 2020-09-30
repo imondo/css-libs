@@ -4,12 +4,40 @@
       <div class="m-search-result js-search-result"></div>
     </div></div><nav class="m-header-nav js-nav"><ul class="m-header-items"><li class="item active"><a class="href" href="triangle.html">效果</a></li><li class="item "><a class="href" href="https://flatuicolors.com/palette/defo">颜色</a></li><li class="item "><a class="href" href="https://uigradients.com/#Sel">渐变色</a></li><li class="item "><a class="href" href="https://cubic-bezier.com/">cubic-bezier</a></li></ul></nav><div id="js-nav-btn" class="m-header-btn ui-font-ydoc"></div></header><div class="m-content" id="js-content"><div id="markdown-body" class="m-content-container markdown-body"><h1>loading</h1>
 <p>常见的 loading 加载效果</p>
+<!-- 学习强国 loading -->
+<style>
+  .loading1 {
+    width: 0;
+    height: 0;
+    border: 5px #e74c3c solid;
+    border-radius: 50%;
+    background: transparent;
+    animation: move-loading1 1s infinite;
+  }
+  @keyframes move-loading1 {
+    50% {
+      transform: scale(2);
+      width: 10px;
+      height: 10px;
+    }
+    100% {
+      opacity: 0;
+      border-width: 2px;
+    }
+  }
+</style>
+<div class="container">
+  <div class="loading1"></div>
+</div>
 <!--  -->
 <style>
 .container {
   position: relative;
   width: 30vh;
   height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .loader {
   width: 2.5em;
@@ -237,7 +265,7 @@
   background: #e67e22;
   display: block;
   margin: 10px auto;
-  position: absolute;
+  /* position: absolute; */
   left: 50%;
   animation: spin 2s ease infinite;
 }
