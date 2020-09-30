@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: #34495e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .loading {
+      width: 0;
+      height: 0;
+      border: 5px #e74c3c solid;
+      border-radius: 50%;
+      background: transparent;
+      animation: move 1s infinite;
+    }
+    @keyframes move {
+      50% {
+        transform: scale(2);
+        width: 10px;
+        height: 10px;
+      }
+      100% {
+        /* transform: scale(2); */
+        opacity: 0;
+        border-width: 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loading"></div>
+</body>
+</html>

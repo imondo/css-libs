@@ -2,12 +2,42 @@
 
 常见的 loading 加载效果
 
+
+<!-- 学习强国 loading -->
+<style>
+  .loading1 {
+    width: 0;
+    height: 0;
+    border: 5px #e74c3c solid;
+    border-radius: 50%;
+    background: transparent;
+    animation: move-loading1 1s infinite;
+  }
+  @keyframes move-loading1 {
+    50% {
+      transform: scale(2);
+      width: 10px;
+      height: 10px;
+    }
+    100% {
+      opacity: 0;
+      border-width: 2px;
+    }
+  }
+</style>
+<div class="container">
+  <div class="loading1"></div>
+</div>
+
 <!--  -->
 <style>
 .container {
   position: relative;
   width: 30vh;
   height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .loader {
   width: 2.5em;
@@ -240,7 +270,7 @@
   background: #e67e22;
   display: block;
   margin: 10px auto;
-  position: absolute;
+  /* position: absolute; */
   left: 50%;
   animation: spin 2s ease infinite;
 }
