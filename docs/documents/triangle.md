@@ -1,5 +1,7 @@
 # 三角形
 
+> [三角形生成器](http://css-tricks.neatbang.com/createTriangle/)；[三角箭头](https://www.dute.org/css-arrow)
+
 纯 `css` 画三角形与 `border` 属性相关
 
 ## 上三角
