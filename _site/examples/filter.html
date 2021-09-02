@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>filter</title>
+  </head>
+  <body>
+    <style>
+      .shaky {
+        font-size: 60px;
+        filter: url(#displacement-text-filter); /**url中对应的是上面svg filter的id**/
+      }
+    </style>
+    <div>
+      <p class="shaky">imondo.cn</p>
+    </div>
+    <svg width="0" height="0">
+      <filter id="displacement-text-filter">
+        <!--定义feTurbulence滤镜-->
+        <feTurbulence baseFrequency="0.02" seed="0">
+          <!--这是svg动画的定义方式，通过动画不断改变seed的值，形成抖动效果-->
+          <animate
+            attributeName="seed"
+            dur="1s"
+            keyTimes="0;0.5;1"
+            values="1;2;3"
+            repeatCount="indefinite"
+          ></animate>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" scale="10" />
+      </filter>
+    </svg>
+  </body>
+</html>
