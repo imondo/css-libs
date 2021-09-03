@@ -1,0 +1,726 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="UTF-8"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><link rel="apple-touch-icon" sizes="180x180" href="..\ydoc\images\apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="..\ydoc\images\favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="..\ydoc\images\favicon-16x16.png"/><link rel="manifest" href="..\ydoc\images\manifest.json"/><link rel="mask-icon" href="..\ydoc\images\safari-pinned-tab.svg" color="#5bbad5"/><meta name="theme-color" content="#ffffff"/><meta http-equiv="Cache-Control" content="no-transform"/><meta http-equiv="Cache-Control" content="no-siteapp"/><title>filter-效果</title><link rel="stylesheet" href="..\ydoc\styles\style.css"/><meta name="author" content="Mondo"/><meta name="keywords"/><meta name="description" content="css tricks"/><meta id="releativePath" content=".."/><link rel="stylesheet" href="..\ydoc\ydoc-plugin-search\search.css"/></head><body><div class="g-doc"><div class="m-aside"><div class="m-summary" id="js-menu"><div class="m-summary-content" id="js-menu-content"><div class="m-summary-block"><ul class="m-summary-list"><li class="item"><a href="triangle.html" class="href">三角形</a></li><li class="item"><a href="onepx.html" class="href">移动端 1px</a></li><li class="item"><a href="" class="href">滤镜 filter</a></li><li class="item"><a href="softui.html" class="href">新拟态 UI</a></li><li class="item"><a href="loading.html" class="href">loading 加载</a></li><li class="item"><a href="hecard.html" class="href">贺卡</a></li></ul></div></div></div><div class="m-summary-switch" id="js-summary-switch"><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="bottom"><g transform="translate(904.92214,-879.1482)"><path d="m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,-55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,-174.6858 c 96.079,-96.07721 175.253196,-174.68583 175.942696,-174.68583 0.6895,0 26.281,25.03215 56.8701,55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864-231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,-104.0616 -231.873,-231.248 z" fill="#fff"></path></g></svg><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="top"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="aaa" fill="#fff" fill-rule="nonzero"><path d="M231.2455,342.502 L0,111.25397 L55.6165,55.62697 C86.2056,25.03212 111.7971,-2.99999998e-05 112.4866,-2.99999998e-05 C113.176,-2.99999998e-05 192.3503,78.60859 288.4293,174.6858 L463.1185,349.3716 L637.8077,174.6858 C733.8867,78.60859 813.060896,-2.99999997e-05 813.750396,-2.99999997e-05 C814.439896,-2.99999997e-05 840.031396,25.03212 870.620496,55.62697 L926.236996,111.25397 L694.9915,342.502 C567.8065,469.6884 463.4636,573.75 463.1185,573.75 C462.7734,573.75 358.4305,469.6884 231.2455,342.502 Z" id="Shape" transform="translate(463.118498, 286.874985) scale(1, -1) translate(-463.118498, -286.874985) "></path></g></g></svg></div></div><div class="m-main" id="js-panel"><header class="m-header" id="js-header"><div class="m-header-title js-logo"><a href="..\index.html" target="_self"><img class="logo" width="36" src="..\ydoc\images\dog@1x.png"/><h6 class="name">CSS Libs</h6></a></div><div><div class="m-search">
+      <div class="icon">&#xf0fd;</div>
+      <input type="text" class="input js-input" placeholder="搜索" />
+      <div class="m-search-result js-search-result"></div>
+    </div></div><nav class="m-header-nav js-nav"><ul class="m-header-items"><li class="item active"><a class="href" href="triangle.html">效果</a></li><li class="item "><a class="href" href="https://flatuicolors.com/palette/defo">颜色</a></li><li class="item "><a class="href" href="https://uigradients.com/#Sel">渐变色</a></li><li class="item "><a class="href" href="https://cubic-bezier.com/">cubic-bezier</a></li></ul></nav><div id="js-nav-btn" class="m-header-btn ui-font-ydoc"></div></header><div class="m-content" id="js-content"><div id="markdown-body" class="m-content-container markdown-body"><h1>filter</h1>
+<blockquote>
+<p>MDN: <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter" target="_blank">filter</a></p>
+</blockquote>
+<h2 id="电影效果">电影效果</h2>
+<style>
+  .filter-1 {
+    position: relative;
+    width: 500px;
+    height: 358px;
+  }
+  .filter-1 .pic {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(https://picsum.photos/400/400?random=1) no-repeat;
+    background-size: cover;
+    animation: fade-way 4.8s linear forwards;
+  }
+  .filter-1 .text {
+    position: absolute;
+    line-height: 55px;
+    color: #fff;
+    font-size: 36px;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: show 4.8s cubic-bezier(0.74, -0.1, 0.86, 0.83) forwards;
+  }
+  /* 背景图明暗度动画 */
+  @keyframes fade-way { 
+    30% {
+      filter: brightness(1)
+    }
+    100% {
+      filter: brightness(0);
+    }
+  }
+  @keyframes show {
+    20% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+<div class="filter-1 container">
+  <div class="pic"></div>
+  <div class="text">
+    <p>imondo.cn</p>
+  </div>
+</div>
+<pre><code class="language-html"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span></span>
+  <span class="token tag">.filter-1</span> {
+    position: relative;
+    width: 500px;
+    height: 358px;
+  }
+  <span class="token tag">.filter-1</span> <span class="token tag">.pic</span> {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(https://picsum.photos/400/400?random=1) no-repeat;
+    background-size: cover;
+    animation: fade-way 4.8s linear forwards;
+  }
+  <span class="token tag">.filter-1</span> <span class="token tag">.text</span> {
+    position: absolute;
+    line-height: 55px;
+    color: #fff;
+    font-size: 36px;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: show 4.8s cubic-bezier(0.74, -0.1, 0.86, 0.83) forwards;
+  }
+  <span class="token multiline-comment comment">/* 背景图明暗度动画 */</span>
+  @keyframes fade-way { 
+    30% {
+      filter: brightness(1)
+    }
+    100% {
+      filter: brightness(0);
+    }
+  }
+  @keyframes show {
+    20% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></span>
+
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>filter-1 container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pic<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>imondo.cn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+</code></pre>
+<h2 id="模糊效果">模糊效果</h2>
+<style>
+  .cards {
+    display: flex;
+  }
+  .card {
+    position: relative;
+    z-index: 1;
+    padding: 10px 20px;
+    margin: 0 10px;
+    width: 200px;
+    height: 280px;
+    border-radius: 20px;
+    list-style: none;
+    color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .card:before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 20px;
+    filter: blur(0px) opacity(1);
+    transition: filter 200ms linear, transform 200ms linear;
+    background-image: url(https://picsum.photos/400/400?random=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .card-1::before {
+    background-image: url(https://picsum.photos/400/400?random=2);
+  }
+  .card-2::before {
+    background-image: url(https://picsum.photos/400/400?random=3);
+  }
+  .cards:hover > .card:not(:hover):before {
+    filter: blur(5px) opacity(0.8) brightness(0.8);
+  }
+  .card:hover:before {
+    filter: saturate(1.2);
+    transform: scale(1.05);
+  }
+</style>
+<ul class="cards">
+  <li class="card">
+    <p class="title">选项一</p>
+    <p class="content">我是选项一</p>
+  </li>
+  <li class="card card-1">
+    <p class="title">选项二</p>
+    <p class="content">我是选项二</p>
+  </li>
+  <li class="card card-2">
+    <p class="title">选项三</p>
+    <p class="content">我是选项三</p>
+  </li>
+</ul>
+<pre><code class="language-html"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span></span>
+  <span class="token tag">.cards</span> {
+    display: flex;
+  }
+  <span class="token tag">.card</span> {
+    position: relative;
+    z-index: 1;
+    padding: 10px 20px;
+    margin: 0 10px;
+    width: 200px;
+    height: 280px;
+    border-radius: 20px;
+    list-style: none;
+    color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  <span class="token tag">.card</span>:before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 20px;
+    filter: blur(0px) opacity(1);
+    transition: filter 200ms linear, transform 200ms linear;
+    background-image: url(https://picsum.photos/400/400?random=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  <span class="token tag">.card-1</span>::before {
+    background-image: url(https://picsum.photos/400/400?random=2);
+  }
+  <span class="token tag">.card-2</span>::before {
+    background-image: url(https://picsum.photos/400/400?random=3);
+  }
+  <span class="token tag">.cards</span>:hover > .card:not(:hover):before {
+    filter: blur(5px) opacity(0.8) brightness(0.8);
+  }
+  <span class="token tag">.card</span>:hover:before {
+    filter: saturate(1.2);
+    transform: scale(1.05);
+  }
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cards<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>选项一<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>我是选项一<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card card-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>选项二<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>我是选项二<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card card-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>选项三<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>我是选项三<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></span>
+</code></pre>
+<h2 id="褪色效果">褪色效果</h2>
+<style>
+  .filter-img {
+    width: 200px;
+    height: 280px;
+    border: 3px solid #fff;
+    box-shadow: 0 10px 50px #5f2f1182;
+    filter: sepia(30%) saturate(40%) hue-rotate(5deg);
+    transition: transform 1s;
+  }
+  .filter-img:hover {
+    filter: none;
+    transform: scale(1.2) translateX(10px);
+    z-index: 1;
+  }
+</style>
+<img class="filter-img" src="https://picsum.photos/400/400?random=4" alt>
+<pre><code class="language-html"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span></span>
+  <span class="token tag">.filter-img</span> {
+    width: 200px;
+    height: 280px;
+    border: 3px solid #fff;
+    box-shadow: 0 10px 50px #5f2f1182;
+    filter: sepia(30%) saturate(40%) hue-rotate(5deg);
+    transition: transform 1s;
+  }
+  <span class="token tag">.filter-img</span>:hover {
+    filter: none;
+    transform: scale(1.2) translateX(10px);
+    z-index: 1;
+  }
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></span>
+
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>filter-img<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://picsum.photos/400/400?random=4<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+</code></pre>
+<h2 id="灰度效果">灰度效果</h2>
+<p>怎样让网站变成灰色？在 html 元素上加上 <code>filter: grayscale(100%)</code> 即可。</p>
+<h2 id="融合效果">融合效果</h2>
+<style>
+  .filter-2 {
+    margin: 50px auto;
+    height: 140px;
+    width: 400px;
+    background: #fff; /* 给融合元素的父元素设置背景色 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: contrast(30); /* 给融合元素的父元素设置contrast */
+  }
+  .filter-2 .circle {
+    border-radius: 50%;
+    position: absolute;
+    filter: blur(10px); /* 给融合元素设置blur */
+  }
+  .filter-2 .circle-1 {
+    height: 90px;
+    width: 90px;
+    background: #03a9f4;
+    transform: translate(-50px);
+    animation: 2s moving linear infinite alternate-reverse;
+  }
+  .filter-2 .circle-2 {
+    height: 60px;
+    width: 60px;
+    background: #0000ff;
+    transform: translate(50px);
+    animation: 2s moving linear infinite alternate;
+  }
+  @keyframes moving {
+    /* //两个元素的移动 */
+    0% {
+      transform: translate(50px);
+    }
+    100% {
+      transform: translate(-50px);
+    }
+  }
+</style>
+<div class="filter-2 container">
+  <div class="circle circle-1"></div>
+  <div class="circle circle-2"></div>
+</div>
+<pre><code class="language-html"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span></span>
+  <span class="token tag">.filter-2</span> {
+    margin: 50px auto;
+    height: 140px;
+    width: 400px;
+    background: #fff; /* 给融合元素的父元素设置背景色 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: contrast(30); /* 给融合元素的父元素设置contrast */
+  }
+  <span class="token tag">.filter-2</span> <span class="token tag">.circle</span> {
+    border-radius: 50%;
+    position: absolute;
+    filter: blur(10px); /* 给融合元素设置blur */
+  }
+  <span class="token tag">.filter-2</span> <span class="token tag">.circle-1</span> {
+    height: 90px;
+    width: 90px;
+    background: #03a9f4;
+    transform: translate(-50px);
+    animation: 2s moving linear infinite alternate-reverse;
+  }
+  <span class="token tag">.filter-2</span> <span class="token tag">.circle-2</span> {
+    height: 60px;
+    width: 60px;
+    background: #0000ff;
+    transform: translate(50px);
+    animation: 2s moving linear infinite alternate;
+  }
+  @keyframes moving {
+    <span class="token multiline-comment comment">/* //两个元素的移动 */</span>
+    0% {
+      transform: translate(50px);
+    }
+    100% {
+      transform: translate(-50px);
+    }
+  }
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>filter-2 container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>circle circle-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>circle circle-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+</code></pre>
+<p><strong>实现融合效果的技术要点</strong>:</p>
+<ul>
+<li>
+<p><code>contrast</code> 滤镜应用在融合元素的父元素（.container）上，且<strong>父元素必须设置 <code>background</code></strong>。</p>
+</li>
+<li>
+<p><code>blur</code> 滤镜应用在融合元素（.circle）上。</p>
+</li>
+</ul>
+<p><code>blur</code> 设置图像的模糊程度，<code>contrast</code> 设置图像的对比度。当两者像上面那样组合时，就会产生神奇的融合效果，你可以像使用公式一样使用这种写法</p>
+<h3 id="融合效果-加载动画">加载动画</h3>
+<style>
+  .container-1 {
+    margin: 10px auto;
+    height: 140px;
+    width: 300px;
+    background: #fff; /* 父元素设置背景色 */
+    display: flex;
+    align-items: center;
+    filter: contrast(30); /* 父元素设置contrast */
+  }
+  .container-1 .circle {
+    height: 50px;
+    width: 60px;
+    background: #1aa7ff;
+    border-radius: 50%;
+    position: absolute;
+    filter: blur(20px); /* 子元素设置blur */
+    transform: scale(0.1);
+    transform-origin: left top;
+  }
+  .container-1 .circle {
+    animation: move 4s cubic-bezier(0.44, 0.79, 0.83, 0.96) infinite;
+  }
+  .container-1 .circle:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  .container-1 .circle:nth-child(3) {
+    animation-delay: 0.8s;
+  }
+  .container-1 .circle:nth-child(4) {
+    animation-delay: 1.2s;
+  }
+  .container-1.circle:nth-child(5) {
+    animation-delay: 1.6s;
+  }
+  @keyframes move {
+    /* 子元素的位移和尺寸动画 */
+    0% {
+      transform: translateX(10px) scale(0.3);
+    }
+    45% {
+      transform: translateX(135px) scale(0.8);
+    }
+    85% {
+      transform: translateX(270px) scale(0.1);
+    }
+  }
+</style>
+<div class="container-1">
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+</div>
+<pre><code class="language-html">    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span></span>
+      <span class="token tag">.container</span> {
+        margin: 10px auto;
+        height: 140px;
+        width: 300px;
+        background: #fff; /* 父元素设置背景色 */
+        display: flex;
+        align-items: center;
+        filter: contrast(30); /* 父元素设置contrast */
+      }
+      <span class="token tag">.circle</span> {
+        height: 50px;
+        width: 60px;
+        background: #1aa7ff;
+        border-radius: 50%;
+        position: absolute;
+        filter: blur(20px); /* 子元素设置blur */
+        transform: scale(0.1);
+        transform-origin: left top;
+      }
+      <span class="token tag">.circle</span> {
+        animation: move 4s cubic-bezier(0.44, 0.79, 0.83, 0.96) infinite;
+      }
+      <span class="token tag">.circle</span>:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+      <span class="token tag">.circle</span>:nth-child(3) {
+        animation-delay: 0.8s;
+      }
+      <span class="token tag">.circle</span>:nth-child(4) {
+        animation-delay: 1.2s;
+      }
+      <span class="token tag">.circle</span>:nth-child(5) {
+        animation-delay: 1.6s;
+      }
+      @keyframes move {
+        <span class="token multiline-comment comment">/* 子元素的位移和尺寸动画 */</span>
+        0% {
+          transform: translateX(10px) scale(0.3);
+        }
+        45% {
+          transform: translateX(135px) scale(0.8);
+        }
+        85% {
+          transform: translateX(270px) scale(0.1);
+        }
+      }
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+      <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>circle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+      <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>circle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+      <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>circle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+      <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>circle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+      <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>circle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+</code></pre>
+<h3 id="融合效果-酷炫的文字出场">酷炫的文字出场</h3>
+<style>
+  .container-0 {
+    margin-top: 50px;
+    text-align: center;
+    background-color: #000;
+    filter: contrast(30);
+  }
+  .container-0 .text {
+    font-size: 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+      sans-serif;
+    letter-spacing: -40px;
+    color: #fff;
+    animation: move-letter 4s linear forwards; /*forwards当动画完成后，保持最后一帧的状态 */
+  }
+  @keyframes move-letter {
+    0% {
+      opacity: 0;
+      letter-spacing: -40px;
+      filter: blur(10px);
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+      filter: blur(5px);
+    }
+    100% {
+      letter-spacing: 20px;
+      filter: blur(2px);
+    }
+  }
+</style>
+<div class="container-0">
+  <span class="text">imondo.cn</span>
+</div>
+<pre><code class="language-html"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span></span>
+  <span class="token tag">.container-1</span> {
+    margin-top: 50px;
+    text-align: center;
+    background-color: #000;
+    filter: contrast(30);
+  }
+  <span class="token tag">.container-1</span> <span class="token tag">.text</span> {
+    font-size: 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+      sans-serif;
+    letter-spacing: -40px;
+    color: #fff;
+    animation: move-letter 4s linear forwards; /*forwards当动画完成后，保持最后一帧的状态 */
+  }
+  @keyframes move-letter {
+    0% {
+      opacity: 0;
+      letter-spacing: -40px;
+      filter: blur(10px);
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+      filter: blur(5px);
+    }
+    100% {
+      letter-spacing: 20px;
+      filter: blur(2px);
+    }
+  }
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>imondo.cn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+</code></pre>
+<h2 id="水波纹效果">水波纹效果</h2>
+<style>
+  .container-3 {
+    height: 520px;
+    width: 400px;
+    display: flex;
+    clip-path: inset(10px);
+    flex-direction: column;
+  }
+  .container-3 img {
+    height: 50%;
+    width: 100%;
+  }
+  .container-3 .reflect {
+    transform: translateY(-2px) scaleY(-1);
+    /**对模拟倒影的元素应用svg filter**/ 
+    /**url 中对应的是上面svg filter 的id **/
+    filter: url(#displacement-wave-filter);
+  }
+</style>
+<div class="container-3">
+  <img src="../images/yue.jpg">
+  <img src="../images/yue.jpg" class="reflect">
+</div>
+<!--定义svg滤镜，这里使用的是feTurbulence滤镜-->
+<svg width="0" height="0">
+  <filter id="displacement-wave-filter">
+    <!--baseFrequency设置0.01 0.09两个值，代表x轴和y轴的噪声频率-->
+    <feturbulence basefrequency="0.01 0.09">
+      <!--这是svg动画的定义方式，通过动画不断改变baseFrequency的值，从而形成波动效果-->
+      <animate attributename="baseFrequency" dur="20s" keytimes="0;0.5;1" values="0.01 0.09;0.02 0.13;0.01 0.09" repeatcount="indefinite"/>
+    </feturbulence>
+    <fedisplacementmap in="SourceGraphic" scale="10">
+  </fedisplacementmap></filter>
+</svg>
+<p><code>filter</code> 还可以通过 <code>URL</code> 链接到 <code>SVG</code> 滤镜元素，<code>SVG</code>滤镜元素 <a href="https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/filter" target="_blank">MDN</a>。</p>
+<p>水波纹效果就是基于 <code>SVG</code> 的 <code>feTurbulence</code> 滤镜实现的，原理参考了 说说SVG的 <a href="https://zhuanlan.zhihu.com/p/366438535" target="_blank">feTurbulence滤镜</a> 和 SVG <a href="https://www.zhangxinxu.com/wordpress/2020/10/svg-feturbulence/" target="_blank">feTurbulence滤镜</a>深入介绍。</p>
+<blockquote>
+<p>feTurbulence 滤镜借助 Perlin 噪声算法模拟自然界真实事物那样的随机样式。它接收下面5个属性：</p>
+<ul>
+<li>baseFrequency 表示噪声的基本频率参数，频率越高，噪声越密集。</li>
+<li>numOctaves 就表示倍频的数量，倍频的数量越多，噪声看起来越自然。</li>
+<li>seed 属性表示 feTurbulence 滤镜效果中伪随机数生成的起始值，不同数量的 seed 不会改变噪声的频率和密度，改变的是噪声的形状和位置。</li>
+<li>stitchTiles 定义了 Perlin 噪声在边框处的行为表现。</li>
+<li>type 属性值有 fractalNoise 和 turbulence，模拟随机样式使用 turbulence。</li>
+</ul>
+</blockquote>
+<pre><code class="language-html"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span></span>
+  <span class="token tag">.container-3</span> {
+    height: 520px;
+    width: 400px;
+    display: flex;
+    clip-path: inset(10px);
+    flex-direction: column;
+  }
+  <span class="token tag">.container-3</span> img {
+    height: 50%;
+    width: 100%;
+  }
+  <span class="token tag">.container-3</span> <span class="token tag">.reflect</span> {
+    transform: translateY(-2px) scaleY(-1);
+    <span class="token multiline-comment comment">/**对模拟倒影的元素应用svg filter**/ </span>
+    <span class="token multiline-comment comment">/**url 中对应的是上面svg filter 的id **/</span>
+    filter: url(#displacement-wave-filter);
+  }
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../images/yue.jpg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../images/yue.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>reflect<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+
+<span class="token markup"><span class="token comment">&lt;!--定义svg滤镜，这里使用的是feTurbulence滤镜--></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>displacement-wave-filter<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+    <span class="token markup"><span class="token comment">&lt;!--baseFrequency设置0.01 0.09两个值，代表x轴和y轴的噪声频率--></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>feTurbulence</span> <span class="token attr-name">baseFrequency</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.01 0.09<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+      <span class="token markup"><span class="token comment">&lt;!--这是svg动画的定义方式，通过动画不断改变baseFrequency的值，从而形成波动效果--></span></span>
+      <span class="token markup">&lt;animate</span>
+        attributeName="baseFrequency"
+        dur="20s"
+        keyTimes="0;0.5;1"
+        values="0.01 0.09;0.02 0.13;0.01 0.09"
+        repeatCount="indefinite"
+      >&lt;/animate>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>feTurbulence</span><span class="token punctuation">></span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>feDisplacementMap</span> <span class="token attr-name">in</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>SourceGraphic<span class="token punctuation">"</span></span> <span class="token attr-name">scale</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>10<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></span>
+  <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter</span><span class="token punctuation">></span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span></span>
+
+</code></pre>
+<h2 id="抖动效果">抖动效果</h2>
+<style>
+  .shaky {
+    font-size: 60px;
+    filter: url(#displacement-text-filter); /**url中对应的是上面svg filter的id**/
+  }
+</style>
+<div>
+  <p class="shaky">imondo.cn</p>
+</div>
+<svg width="0" height="0">
+  <filter id="displacement-text-filter">
+    <!--定义feTurbulence滤镜-->
+    <feturbulence basefrequency="0.02" seed="0">
+      <!--这是svg动画的定义方式，通过动画不断改变seed的值，形成抖动效果-->
+      <animate attributename="seed" dur="1s" keytimes="0;0.5;1" values="1;2;3" repeatcount="indefinite"/>
+    </feturbulence>
+    <fedisplacementmap in="SourceGraphic" scale="10">
+  </fedisplacementmap></filter>
+</svg>
+<pre><code class="language-html">    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span></span>
+      <span class="token tag">.shaky</span> {
+        font-size: 60px;
+        filter: url(#displacement-text-filter); /**url中对应的是上面svg filter的id**/
+      }
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span></span>
+      <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>shaky<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>imondo.cn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+      <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>displacement-text-filter<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+        <span class="token markup"><span class="token comment">&lt;!--定义feTurbulence滤镜--></span></span>
+        <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>feTurbulence</span> <span class="token attr-name">baseFrequency</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.02<span class="token punctuation">"</span></span> <span class="token attr-name">seed</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+          <span class="token markup"><span class="token comment">&lt;!--这是svg动画的定义方式，通过动画不断改变seed的值，形成抖动效果--></span></span>
+          <span class="token markup">&lt;animate</span>
+            attributeName="seed"
+            dur="1s"
+            keyTimes="0;0.5;1"
+            values="1;2;3"
+            repeatCount="indefinite"
+          >&lt;/animate>
+        <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>feTurbulence</span><span class="token punctuation">></span></span></span>
+        <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>feDisplacementMap</span> <span class="token attr-name">in</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>SourceGraphic<span class="token punctuation">"</span></span> <span class="token attr-name">scale</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>10<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></span>
+      <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter</span><span class="token punctuation">></span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span></span>
+</code></pre>
+<p><strong>参考</strong></p>
+<ul>
+<li><a href="https://juejin.cn/post/7002829486806794276#heading-6" target="_blank">巧用CSS filter，让你的网站更加酷炫！</a></li>
+</ul>
+</div><div class="m-content-container m-paging"><div class="m-paging-prev m-paging-item"><a href="onepx.html" class="href"><span class="ui-font-ydoc"></span>移动端 1px</a></div><div class="m-paging-next m-paging-item"><a href="softui.html" class="href">新拟态 UI<span class="ui-font-ydoc"></span></a></div></div></div></div></div><div></div><script>
+    var $content = document.getElementById('js-content');
+    var $summaryItems = Array.prototype.slice.call(document.querySelectorAll('#js-menu .href'));
+    var $menu = document.getElementById('js-menu');
+    if (sessionStorage.prevPathname) {
+      sessionStorage.setItem('prevPrevPathname', sessionStorage.prevPathname);
+      sessionStorage.setItem('prevPrevMenuScrollTop', sessionStorage.prevMenuScrollTop);
+      sessionStorage.setItem('prevPrevContentScrollTop', sessionStorage.prevContentScrollTop);
+    }
+    if (sessionStorage.locationPathname) {
+      sessionStorage.setItem('prevPathname', sessionStorage.locationPathname);
+      sessionStorage.setItem('prevMenuScrollTop', sessionStorage.menuScrollTop);
+      sessionStorage.setItem('prevContentScrollTop', sessionStorage.contentScrollTop);
+    }
+    if ($menu && sessionStorage.menuScrollTop) {
+		  $menu.scrollTop = sessionStorage.menuScrollTop;
+    }
+    // 刷新页面但不切换 pathname 的时候，内容区恢复到记忆的高度
+    if ($content && sessionStorage.contentScrollTop && window.location.pathname == sessionStorage.locationPathname) {
+      $content.scrollTop = sessionStorage.contentScrollTop;
+    } else if (sessionStorage.prevPrevPathname && sessionStorage.prevPrevPathname === window.location.pathname) {
+      if ($menu && sessionStorage.prevPrevMenuScrollTop) {
+        $menu.scrollTop = sessionStorage.prevPrevMenuScrollTop;
+      }
+      if ($content && sessionStorage.prevPrevContentScrollTop) {
+        $content.scrollTop = sessionStorage.prevPrevContentScrollTop;
+      }
+    }
+    sessionStorage.setItem('locationPathname', window.location.pathname);
+    </script><script src="..\ydoc\scripts\plugins\dollar.min.js"></script><script src="..\ydoc\scripts\plugins\responsive-nav.min.js"></script><script src="..\ydoc\scripts\plugins\slideout.min.js"></script><script src="..\ydoc\scripts\app.js"></script><script src="..\ydoc\ydoc-plugin-search\core.js"></script><script src="..\ydoc\ydoc-plugin-search\search.js"></script><script src="..\search_json.js"></script></body></html>
