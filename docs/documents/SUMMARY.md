@@ -1,5 +1,7 @@
 # Summary
 
+* [常见布局](center.md)
+
 * [三角形](triangle.md)
 
 * [移动端 1px](onepx.md)

@@ -2,6 +2,29 @@
 
 > MDN: [filter](https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter)
 
+一些使用函数
+
+```css
+/* 使用单个滤镜 （如果传入的参数是百分数，那么也可以传入对应的小数：40% --> 0.4）*/
+filter: blur(5px);
+filter: brightness(40%);
+filter: contrast(200%);
+filter: drop-shadow(16px 16px 20px blue);
+filter: grayscale(50%);
+filter: hue-rotate(90deg);
+filter: invert(75%);
+filter: opacity(25%);
+filter: saturate(30%);
+filter: sepia(60%);
+
+/* 使用多个滤镜 */
+filter: contrast(175%) brightness(3%);
+
+/* 不使用任何滤镜 */
+filter: none;
+
+```
+
 ## 电影效果
 
 <style>
