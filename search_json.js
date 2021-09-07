@@ -58,6 +58,33 @@ window.ydoc_plugin_search_json = {
       ]
     },
     {
+      "title": "常见布局",
+      "content": "",
+      "url": "\\documents\\center.html",
+      "children": [
+        {
+          "title": "垂直居中",
+          "url": "\\documents\\center.html#垂直居中",
+          "content": "垂直居中这里的垂直居中只针对未知高度元素居中，解决方案只是作者常用方案之一。"
+        },
+        {
+          "title": "绝对定位和 translate",
+          "url": "\\documents\\center.html#垂直居中-绝对定位和-translate",
+          "content": "绝对定位和 translate  .mb-10 {\n    margin-bottom: 10px;\n  }\n  .parent {\n    position: relative;\n    width: 500px;\n    height: 500px;\n    border: 1px solid;\n  }\n  .parent .child {\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    padding: 30px;\n    transform: translate(-50%, -50%);\n    background-color: blueviolet;\n    color: #fff;\n  }\n  imondo.cn\n  .parent {\n    position: relative;\n    width: 500px;\n    height: 500px;\n    border: 1px solid;\n  }\n  .parent .child {\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    padding: 30px;\n    transform: translate(-50%, -50%);\n    background-color: blueviolet;\n    color: #fff;\n  }\n\n\n  imondo.cn\n\n"
+        },
+        {
+          "title": "flex 布局",
+          "url": "\\documents\\center.html#垂直居中-flex-布局",
+          "content": "flex 布局这应该是现代浏览器最佳方案  .parent-1 {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 500px;\n    height: 500px;\n    border: 1px solid;\n  }\n  .parent-1 .child {\n    padding: 30px;\n    background-color: blueviolet;\n    color: #fff;\n  }\n  imondo.cn\n  .parent {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 500px;\n    height: 500px;\n    border: 1px solid;\n  }\n  .parent .child {\n    padding: 30px;\n    background-color: blueviolet;\n    color: #fff;\n  }\n\n\n  imondo.cn\n\n"
+        },
+        {
+          "title": "底部页脚",
+          "url": "\\documents\\center.html#底部页脚",
+          "content": "底部页脚一般我们是使用 calc 计算 main 高度，这种对于固定的 footer 而言还是可以解决问题  .container-1 {\n    width: 500px;\n    height: 500px;\n    border: 1px solid;\n    text-align: center;\n    color: #fff;\n  }\n  .container-1 header {\n    height: 50px;\n    background-color: #3498db;\n  }\n  .container-1 main {\n    min-height: calc(500px - 50px - 40px);\n    background-color: #95a5a6;\n  }\n  .container-1 footer {\n    height: 40px;\n    padding: 15px 0;\n    background-color: #1abc9c;\n    box-sizing: border-box;\n  }\n  header\n  main\n  footer\n具体代码：  \n    .container {\n      border: 1px solid;\n      text-align: center;\n      color: #fff;\n    }\n    .container header {\n      height: 50px;\n      background-color: #3498db;\n    }\n    .container main {\n      min-height: calc(100vh - 50px - 40px);\n      background-color: #95a5a6;\n    }\n    .container footer {\n      box-sizing: border-box;\n      height: 40px;\n      padding: 15px 0;\n      background-color: #1abc9c;\n    }\n  \n  \n    header\n    main\n    footer\n  \n又要拿出我们的 Flex 布局      .container-2 {\n      display: flex;\n      flex-direction: column;\n      width: 500px;\n      height: 500px;\n      border: 1px solid;\n      text-align: center;\n      color: #fff;\n    }\n    .container-2 header {\n      padding: 15px 0;\n      background-color: #3498db;\n    }\n    .container-2 main {\n      flex: 1;\n      background-color: #95a5a6;\n    }\n    .container-2 footer {\n      padding: 15px 0;\n      background-color: #1abc9c;\n    }\n        header\n    main\n    footer\n        .container {\n      display: flex;\n      flex-direction: column;\n      width: 500px;\n      height: 500px;\n      border: 1px solid;\n      text-align: center;\n      color: #fff;\n    }\n    .container header {\n      padding: 15px 0;\n      background-color: #3498db;\n    }\n    .container main {\n      flex: 1;\n      background-color: #95a5a6;\n    }\n    .container footer {\n      padding: 15px 0;\n      background-color: #1abc9c;\n    }\n  \n  \n    header\n    main\n    footer\n  \n"
+        }
+      ]
+    },
+    {
       "title": "移动端 1px",
       "content": "虽然这个 1px 需求其实是有点扯淡的 😜；因为视网膜屏本就是 1px由多个 dip 显示，纠结这个其实没什么含义。IOS 端其实是已经支持了 0.5px 方案，所以这里其实是中 hook 写法，以应付所谓的像素级还原.hairline, .hairline-bottom, .hairline-top, .hairline-left, .hairline-right {\n  position: relative;\n}\n\n/*线条颜色*/\n.hairline-bottom::after, .hairline-top::after, .hairline-left::after, .hairline-right::after {\n  background-color: #e74c3c;\n}\n\n/*底边边框一像素*/\n.hairline-bottom::after {\n  content: \"\";\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  height: 1px;\n  transform-origin: 0 0;\n}\n\n/*上边边框一像素*/\n.hairline-top::after {\n  content: \"\";\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 1px;\n  transform-origin: 0 0;\n}\n\n/*左边边框一像素*/\n.hairline-left::after {\n  content: \"\";\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 1px;\n  height: 100%;\n  transform-origin: 0 0;\n}\n\n/*右边边框1像素*/\n.hairline-right::after {\n  content: \"\";\n  box-sizing: hairline-box;\n  position: absolute;\n  right: 0;\n  top: 0;\n  width: 1px;\n  height: 100%;\n  transform-origin: 0 0;\n}\n\n/*边框一像素*/\n.hairline::after {\n  content: \"\";\n  box-sizing: border-box;\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  border: 1px solid #e74c3c;\n}\n\n@media (-webkit-min-device-pixel-ratio: 2) {\n  .hairline-bottom::after, .hairline-top::after {\n    transform: scaleY(0.5);\n  }\n\n  .hairline-left::after, .hairline-right::after {\n    transform: scaleX(0.5);\n  }\n\n  .hairline::after {\n    width: 200%;\n    height: 200%;\n    transform: scale(0.5);\n    transform-origin: 0 0;\n  }\n}\n\n/*设备像素比*/\n@media (-webkit-min-device-pixel-ratio: 3)  {\n  .hairline-bottom::after, .hairline-top::after {\n    transform: scaleY(0.333);\n  }\n\n  .hairline-left::after, .hairline-right::after {\n    transform: scaleX(0.333);\n  }\n\n  .hairline::after {\n    width: 300%;\n    height: 300%;\n    transform: scale(0.333);\n    transform-origin: 0 0;\n  }\n}\n.sj3 {\n  width: 150px;\n  height: 150px;\n  margin: 10px;\n  padding: 10px;\n  text-align: center;\n  line-height: 150px;\n  font-size: 14px;\n}\n这是 1px 吗这是 左边 1px 吗这是 右边 1px 吗这是 上边 1px 吗这是 下边 1px 吗可能需要移动模式下才能看出区别",
       "url": "\\documents\\onepx.html",
@@ -71,7 +98,7 @@ window.ydoc_plugin_search_json = {
     },
     {
       "title": "filter",
-      "content": "MDN: filter\n",
+      "content": "MDN: filter\n一些使用函数/* 使用单个滤镜 （如果传入的参数是百分数，那么也可以传入对应的小数：40% --> 0.4）*/filter: blur(5px);\nfilter: brightness(40%);\nfilter: contrast(200%);\nfilter: drop-shadow(16px 16px 20px blue);\nfilter: grayscale(50%);\nfilter: hue-rotate(90deg);\nfilter: invert(75%);\nfilter: opacity(25%);\nfilter: saturate(30%);\nfilter: sepia(60%);\n\n/* 使用多个滤镜 */\nfilter: contrast(175%) brightness(3%);\n\n/* 不使用任何滤镜 */\nfilter: none;\n\n",
       "url": "\\documents\\filter.html",
       "children": [
         {
