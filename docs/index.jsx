@@ -3,7 +3,7 @@ banner:
   name: 'CSS Libs'
   desc: 'CSS 效果采集库'
   btns: 
-    - { name: '开 始', href: './documents/triangle.html', primary: true }
+    - { name: '开 始', href: './documents/center.html', primary: true }
     - { name: 'Github >', href: 'https://github.com/one-pupil/css-libs' }
 features: 
   - { name: '记录', desc: '记录工作中使用，碰到过的 css 效果' }

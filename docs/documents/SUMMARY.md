@@ -2,6 +2,8 @@
 
 * [常见布局](center.md)
 
+* [省略号](ellipsis.md)
+
 * [三角形](triangle.md)
 
 * [移动端 1px](onepx.md)
