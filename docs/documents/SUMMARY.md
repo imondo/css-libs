@@ -15,3 +15,5 @@
 * [loading 加载](loading.md)
 
 * [贺卡](hecard.md)
+
+* [绘制马匹](drawImage.md)
